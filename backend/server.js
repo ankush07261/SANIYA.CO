@@ -9,7 +9,7 @@ import connectDB from "./config/db.js";
 dotenv.config();
 
 // Connect to the database
-connectDB();
+// connectDB();
 
 const app = express();
 
@@ -26,6 +26,10 @@ app.use(express.json());
 // app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
+
+app.get('/', (req, res)=>{
+  console.log('home');
+})
 
 app.listen(PORT, () => {
   console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
